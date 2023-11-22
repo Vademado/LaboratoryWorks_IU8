@@ -6,11 +6,12 @@ void printStudent(const Student& student)
     std::cout << "Study group: " << student.study_group << std::endl;
     std::cout << "Credit card number: " << student.credit_card_number << std::endl;
     std::cout << "Assessment for exams: ";
-    for (unsigned short int mark : student.grades)
+    for (size_t i = 0; i < 4; ++i)
     {
-        std::cout << mark << " ";
+        std::cout << student.grades[i] << ' ';
     }
-    std::cout << "#############################################" << std::endl;
+    std::cout << '\n'
+        << "#############################################" << std::endl;
 }
 
 void fileManager(const std::string mode, const std::string representation, const std::string fileName)
@@ -33,33 +34,47 @@ void fileManager(const std::string mode, const std::string representation, const
             return;
         }
 
-        //std::vector<Student> students;
         Student student;
-        while (!readFile.eof())
+        if (representation == "bin")
         {
-            if (representation == "bin")
+            char currentByte;
+            while (readFile.get(currentByte))
             {
-                readFile.read((char*)&student, sizeof(Student));
+                student.full_name = "";
+                char endString = '\0';
+                while (currentByte != endString)
+                {
+                    student.full_name += currentByte;
+                    readFile.get(currentByte);
+                }
+
+                readFile.read((char*)&student.study_group, sizeof(unsigned short int));
+                readFile.read((char*)&student.credit_card_number, sizeof(unsigned int));
+                for (size_t i = 0; i < 4; ++i)
+                {
+                    readFile.read((char*)&student.grades[i], sizeof(unsigned short int));
+                }
+
+                printStudent(student);
             }
-            else
+        }
+        else
+        {
+            std::string study_group, credit_card_number, mark1, mark2, mark3, mark4;
+            while (readFile >> student.full_name >> study_group >> credit_card_number >> mark1 >> mark2 >> mark3 >> mark4)
             {
-                std::string study_group, credit_card_number, mark1, mark2, mark3, mark4;
-                readFile >> student.full_name;
-                readFile >> study_group >> credit_card_number >> mark1 >> mark2 >> mark3 >> mark3;
                 student.study_group = (unsigned short int)std::stoi(study_group);
                 student.credit_card_number = (unsigned int)std::stoi(credit_card_number);
-                student.grades = std::vector<unsigned short int>{ (unsigned short int)std::stoi(mark1), (unsigned short int)std::stoi(mark2), (unsigned short int)std::stoi(mark3), (unsigned short int)std::stoi(mark4) };
+                student.grades[0] = (unsigned short int)std::stoi(mark1);
+                student.grades[1] = (unsigned short int)std::stoi(mark2);
+                student.grades[2] = (unsigned short int)std::stoi(mark3);
+                student.grades[3] = (unsigned short int)std::stoi(mark4);
+
+                printStudent(student);
             }
-            //students.push_back(student);
-            printStudent(student);
         }
 
         readFile.close();
-
-        //for (Student student : students)
-        //{
-           // printStudent(student);
-        //}
     }
     else if (mode == "-w")
     {
@@ -99,12 +114,17 @@ void fileManager(const std::string mode, const std::string representation, const
             unsigned short int mark1, mark2, mark3, mark4;
             std::cout << "Enter 4 assessments for exams: ";
             std::cin >> mark1 >> mark2 >> mark3 >> mark4;
-            std::vector<unsigned short int> grades{ mark1, mark2, mark3, mark4 };
+            unsigned short int grades[] = { mark1, mark2, mark3, mark4 };
 
             if (representation == "bin")
             {
-                Student student = { full_name, study_group, credit_card_number, grades };
-                writeFile.write((char*)&student, sizeof(Student));
+                writeFile.write(full_name.c_str(), full_name.size() + 1);
+                writeFile.write((char*)&study_group, sizeof(unsigned short int));
+                writeFile.write((char*)&credit_card_number, sizeof(unsigned int));
+                for (size_t i = 0; i < 4; ++i)
+                {
+                    writeFile.write((char*)&grades[i], sizeof(unsigned short int));
+                }
             }
             else
             {

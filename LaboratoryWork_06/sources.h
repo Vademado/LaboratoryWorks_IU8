@@ -8,8 +8,7 @@ struct Student {
 	std::string full_name;
 	unsigned short int study_group;
 	unsigned int credit_card_number;
-	std::vector<unsigned short int> grades;
-	//std::vector<unsigned char> grades[4]; спросить!!!
+	unsigned short int grades[4];
 };
 
 void fileManager(const std::string mode, const std::string representation, const std::string fileName);
