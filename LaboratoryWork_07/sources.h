@@ -1,37 +1,34 @@
 #pragma once
+#include <fstream>
 #include <iostream>
 #include <string>
 
-struct Employee {
-	std::string full_name;
-	std::string date_employment;
-
+struct Employee
+{
+    std::string full_name;
+    std::string date_employment;
+    std::string post;
+    unsigned int base_salary;
 };
 
-/*struct ListItem { // структура элемента односвязного списка(указатель только на следущий эллемент)
-	int n; // значение элемента списка
-	ListItem* pNext; // указатель на следущий элемент
+struct Node
+{
+    Employee employee;
+    Node* pPrev;
+    Node* pNext;
 };
 
-struct MyList { // струкктура односвязного списка
-	ListItem* pF = nullptr, * pE = nullptr; // указатели на первый и последний элементы односвязного списка
+struct List
+{
+    Node* pFirst = nullptr;
+    Node* pEnd = nullptr;
 };
 
-*/
-
-struct Node {
-	int n;
-	Node* pPrev;
-	Node* pNext;
-};
-
-struct MyList {
-	Node* pFirst = nullptr;
-	Node* pEnd = nullptr;
-};
-
-void AddBegin(MyList& list, Node* p) {
-	if (list.pFirst == nullptr) {
-
-	}
-}
+void addBegin(List& list, Node* p);
+void addEnd(List& list, Node* p);
+void removeNode(List& list, Node* p);
+Node* extractFront(List& list);
+Node* extractBack(List& list);
+void print(List& list);
+void insertSort(List& list);
+List readDataEmployees(const std::string& dataFilePath);
