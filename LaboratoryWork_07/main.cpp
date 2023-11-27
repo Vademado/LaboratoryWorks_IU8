@@ -20,5 +20,7 @@ int main(int argc, char* argv[])
     std::cout << "After sorting:" << std::endl;
     print(employeesList);
 
+    clearList(employeesList);
+
     return 0;
 }

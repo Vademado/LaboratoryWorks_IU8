@@ -26,9 +26,10 @@ struct List
 
 void addBegin(List& list, Node* p);
 void addEnd(List& list, Node* p);
-void removeNode(List& list, Node* p);
+void removeNode(List& list, unsigned short index);
 Node* extractFront(List& list);
 Node* extractBack(List& list);
 void print(List& list);
+void clearList(List& list);
 void insertSort(List& list);
 List readDataEmployees(const std::string& dataFilePath);

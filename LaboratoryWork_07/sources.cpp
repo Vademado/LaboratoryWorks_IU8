@@ -58,20 +58,27 @@ void addEnd(List& list, Node* p)
     }
 }
 
-void removeNode(List& list, Node* p)
+void removeNode(List& list, unsigned short index)
 {
     if (list.pFirst == nullptr)
     {
         std::cerr << "ERROR: List is empty" << std::endl;
+        return;
     }
-    else if (p->pPrev == p)
+    Node* p = list.pFirst;
+    if (p->pPrev == p)
     {
         list.pEnd = list.pFirst = nullptr;
     }
     else
     {
+        for (size_t i = 0; i < index; ++i) {
+            p = p->pNext;
+        }
         p->pPrev->pNext = p->pNext;
         p->pNext->pPrev = p->pPrev;
+        if (list.pFirst == p) list.pFirst = p->pNext;
+        if (list.pEnd == p) list.pEnd = p->pPrev;
     }
     delete p;
 }
@@ -122,6 +129,12 @@ void print(List& list)
         p = p->pNext;
     } while (p != list.pFirst);
     std::cout << std::endl;
+}
+
+void clearList(List& list) {
+    while (list.pFirst != nullptr) {
+        removeNode(list, 0);
+    }
 }
 
 void insertSort(List& list)
