@@ -1,0 +1,5 @@
+Empl1 01/09/23 teacher 100
+Empl2 01/09/22 teacher 120
+Empl3 03/09/22 teacher 110
+Empl4 01/08/20 teacher 115
+Empl5 02/09/22 teacher 115

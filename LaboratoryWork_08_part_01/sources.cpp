@@ -1,15 +1,22 @@
 #include "sources.h"
 
-void AddingElementsToEnd(const unsigned int numberIterations)
+void AddingElementsToEnd(const unsigned int containerSize, const unsigned int numberIterations)
 {
     double summaryTimeVector = 0., summaryTimeList = 0.;
 
     std::vector<int> vector;
     std::srand(time(0));
+    for (size_t i = 0; i < containerSize; ++i)
+    {
+        vector.push_back(rand());
+    }
+
+    std::vector<int> vector1;
     for (size_t i = 0; i < numberIterations; ++i)
     {
+        vector1.assign(vector.begin(), vector.end());
         auto start = std::chrono::steady_clock::now();
-        vector.push_back(rand());
+        vector1.push_back(rand());
         auto end = std::chrono::steady_clock::now();
         auto executionTimeMilliseconds = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
@@ -19,15 +26,23 @@ void AddingElementsToEnd(const unsigned int numberIterations)
 
     std::list<int> list;
     std::srand(time(0));
+    for (size_t i = 0; i < containerSize; ++i)
+    {
+        list.push_back(rand());
+    }
+
+    std::list<int> list1;
     for (size_t i = 0; i < numberIterations; ++i)
     {
+        list1.assign(list.begin(), list.end());
         auto start = std::chrono::steady_clock::now();
-        list.push_back(rand());
+        list1.push_back(rand());
         auto end = std::chrono::steady_clock::now();
         auto executionTimeMilliseconds = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
         summaryTimeList += executionTimeMilliseconds.count();
     }
+
     std::cout << "Average execution time of the operation of adding an element to the end of the container std::list in milliseconds: " << summaryTimeList / numberIterations << std::endl
         << std::endl;
 }

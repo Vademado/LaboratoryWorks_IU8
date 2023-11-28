@@ -1,21 +1,23 @@
 #include "sources.h"
 
-int main() {
+int main(int argc, char* argv[])
+{
+    if (argc != 2)
+    {
+        std::cerr << "Invalid number of arguments";
+        return 1;
+    }
 
-	char str[] = "apple,orange,banana";
-	char* token;
-	char* context = nullptr;
+    std::string dataFilePath = argv[1];
+    std::vector<Employee> employersVector = readDataEmployees(dataFilePath);
 
-	token = strtok_s(str, ",", &context);
-	while (token != nullptr) {
-		std::cout << token << std::endl;
-		token = strtok_s(nullptr, ",", &context);
-	}
+    std::cout << "Employers-vector before sorting by date of employment:" << std::endl << std::endl;
+    print(employersVector);
 
-	std::vector<Employee> employersVector = readDataEmployees("EmpoyeesData.txt");
+    std::sort(employersVector.begin(), employersVector.end(), SortingByDateEmployment);
 
-	std::sort(employersVector.begin(), employersVector.end(), SortingByFullName);
-	print(employersVector);
+    std::cout << "Employers-vector after sorting by date of employment:" << std::endl << std::endl;
+    print(employersVector);
 
-	return 0;
+    return 0;
 }

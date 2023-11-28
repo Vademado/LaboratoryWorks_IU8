@@ -1,8 +1,8 @@
 #pragma once
 #include <algorithm>
-#include <cstring>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -17,7 +17,5 @@ struct Employee
 std::vector<Employee> readDataEmployees(const std::string& dataFilePath);
 bool SortingByFullName(const Employee& empl1, const Employee& empl2);
 bool SortingByDateEmployment(const Employee& empl1, const Employee& empl2);
-
 bool SortingByBaseSalary(const Employee& empl1, const Employee& empl2);
-
 void print(const std::vector<Employee>& employersVector);
