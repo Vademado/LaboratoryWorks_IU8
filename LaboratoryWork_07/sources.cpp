@@ -72,13 +72,16 @@ void removeNode(List& list, unsigned short index)
     }
     else
     {
-        for (size_t i = 0; i < index; ++i) {
+        for (size_t i = 0; i < index; ++i)
+        {
             p = p->pNext;
         }
         p->pPrev->pNext = p->pNext;
         p->pNext->pPrev = p->pPrev;
-        if (list.pFirst == p) list.pFirst = p->pNext;
-        if (list.pEnd == p) list.pEnd = p->pPrev;
+        if (list.pFirst == p)
+            list.pFirst = p->pNext;
+        if (list.pEnd == p)
+            list.pEnd = p->pPrev;
     }
     delete p;
 }
@@ -131,8 +134,10 @@ void print(List& list)
     std::cout << std::endl;
 }
 
-void clearList(List& list) {
-    while (list.pFirst != nullptr) {
+void clearList(List& list)
+{
+    while (list.pFirst != nullptr)
+    {
         removeNode(list, 0);
     }
 }

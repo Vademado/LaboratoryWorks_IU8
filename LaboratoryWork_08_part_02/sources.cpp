@@ -65,5 +65,6 @@ void print(const std::vector<Employee>& employersVector)
         std::cout << "Base salary: " << employee.base_salary << std::endl;
         std::cout << "#############################################" << std::endl;
     }
-    std::cout << std::endl << std::endl;
+    std::cout << std::endl
+        << std::endl;
 }

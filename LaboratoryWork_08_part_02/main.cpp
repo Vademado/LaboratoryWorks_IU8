@@ -11,12 +11,14 @@ int main(int argc, char* argv[])
     std::string dataFilePath = argv[1];
     std::vector<Employee> employersVector = readDataEmployees(dataFilePath);
 
-    std::cout << "Employers-vector before sorting by date of employment:" << std::endl << std::endl;
+    std::cout << "Employers-vector before sorting by date of employment:" << std::endl
+        << std::endl;
     print(employersVector);
 
     std::sort(employersVector.begin(), employersVector.end(), SortingByDateEmployment);
 
-    std::cout << "Employers-vector after sorting by date of employment:" << std::endl << std::endl;
+    std::cout << "Employers-vector after sorting by date of employment:" << std::endl
+        << std::endl;
     print(employersVector);
 
     return 0;
