@@ -7,36 +7,36 @@
 
 class EmployeeCompany
 {
-    std::string fullname;
-    unsigned int salary;
-    short salary_supplement;
+	std::string fullname;
+	unsigned int salary;
+	short salary_supplement;
 
 public:
-    EmployeeCompany();
+	EmployeeCompany();
 
-    explicit EmployeeCompany(std::string, unsigned int, short);
+	explicit EmployeeCompany(std::string, unsigned int, short);
 
-    std::string getFullName();
+	std::string getFullName();
 
-    void setFullName(std::string);
+	void setFullName(std::string);
 
-    unsigned int getSalary();
+	unsigned int getSalary();
 
-    void setSalary(unsigned int);
+	void setSalary(unsigned int);
 
-    short getSalarySupplement();
+	short getSalarySupplement();
 
-    void setSalarySupplement(short);
+	void setSalarySupplement(short);
 
-    float salaryWithAllowance();
+	float salaryWithAllowance();
 
-    void printEmployee();
+	void printEmployee();
 };
 
 struct TwoValues
 {
-    EmployeeCompany* dataEmployee;
-    int quantity = 0;
+	EmployeeCompany* dataEmployee;
+	int quantity = 0;
 };
 
 TwoValues readDataDynamic(const std::string&);

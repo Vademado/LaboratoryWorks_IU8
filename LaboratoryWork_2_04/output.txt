@@ -1,0 +1,10 @@
+Fullname: Alex
+Date of employment: 13.01.2024
+Post: senior
+Salary: 350
+#########################################
+Fullname: Vadim
+Date of employment: 20.03.2024
+Post: senior
+Salary: 350
+#########################################

@@ -6,7 +6,7 @@ Employee::Employee(std::string fullname, std::string date_employment, std::strin
 
 Employee::Employee(const Employee& other) : fullname(other.fullname), date_employment(other.date_employment), post(other.post), salary(other.salary) {}
 
-Employee::Employee(Employee&& other) : fullname(other.fullname), date_employment(other.date_employment), post(other.post), salary(other.salary)
+Employee::Employee(Employee&& other) noexcept : fullname(other.fullname), date_employment(other.date_employment), post(other.post), salary(other.salary)
 {
 	other.fullname = "";
 	other.date_employment = "";
@@ -24,6 +24,28 @@ Employee& Employee::operator=(const Employee& other)
 	}
 
 	return *this;
+}
+
+Employee& Employee::operator=(Employee&& other) noexcept
+{
+	if (this != &other) {
+		fullname = other.fullname;
+		date_employment = other.date_employment;
+		post = other.post;
+		salary = other.salary;
+
+		other.fullname = "";
+		other.date_employment = "";
+		other.post = "";
+		other.salary = 0;
+	}
+
+	return *this;
+}
+
+bool Employee::operator==(const Employee& other) const
+{
+	return fullname == other.fullname;
 }
 
 bool Employee::operator<(const Employee& other) const
@@ -77,4 +99,15 @@ std::vector<Employee> readData(std::istream& input_stream)
 bool sortingByName(const Employee& firstEmployee, const Employee& secondEmployee)
 {
 	return firstEmployee.getName() < secondEmployee.getName();
+}
+
+namespace std {
+
+	template<>
+	struct hash<Employee> {
+		size_t operator()(const Employee& employee) const {
+			return hash<string>()(employee.getName());
+		}
+
+	};
 }

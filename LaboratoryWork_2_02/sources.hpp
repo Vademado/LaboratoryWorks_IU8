@@ -5,33 +5,33 @@
 
 class Vector
 {
-    double* data_;
-    size_t size_ = 0;
+	double* data_;
+	size_t size_ = 0;
 
 public:
-    Vector();
+	Vector();
 
-    Vector(const double*, size_t);
+	Vector(const double*, size_t);
 
-    Vector(const Vector&);
+	Vector(const Vector&);
 
-    Vector(Vector&&);
+	Vector(Vector&&);
 
-    double& operator[](size_t);
+	double& operator[](size_t);
 
-    Vector& operator=(const Vector&);
+	Vector& operator=(const Vector&);
 
-    Vector& operator=(Vector&&);
+	Vector& operator=(Vector&&);
 
-    Vector operator+(const Vector&) const;
+	Vector operator+(const Vector&) const;
 
-    friend std::ostream& operator<<(std::ostream& output_stream, const Vector& vector);
+	friend std::ostream& operator<<(std::ostream& output_stream, const Vector& vector);
 
-    friend std::istream& operator>>(std::istream& input_stream, Vector& vector);
+	friend std::istream& operator>>(std::istream& input_stream, Vector& vector);
 
-    Vector& operator++();
+	Vector& operator++();
 
-    Vector operator++(int);
+	Vector operator++(int);
 
-    ~Vector();
+	~Vector();
 };

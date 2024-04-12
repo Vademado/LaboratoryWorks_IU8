@@ -1,14 +1,17 @@
 #pragma once
-#include <algorithm>
-#include <deque>
 #include <fstream>
 #include <iostream>
+#include <map>
+#include <set>
 #include <string>
+#include <unordered_map>
+#include <unordered_set>
 #include <vector>
 
 
 class Employee
 {
+private:
     std::string fullname;
     std::string date_employment;
     std::string post;
@@ -21,11 +24,15 @@ public:
 
     Employee(const Employee&);
 
-    Employee(Employee&&);
+    Employee(Employee&&) noexcept;
 
     Employee& operator = (const Employee&);
 
-    bool operator<(const Employee&) const;
+    Employee& operator = (Employee&&) noexcept;
+
+    bool operator == (const Employee&) const; // для контейнеров set и map
+
+    bool operator<(const Employee&) const; // для контейнеров set и map
 
     bool operator()(const Employee&, const Employee&) const;
 

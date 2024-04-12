@@ -1,0 +1,15 @@
+Full name: Vadim
+Salary: 520
+Salary supplement: 20
+Salary with an allowance: 624
+#############################################
+Full name: Petr
+Salary: 120
+Salary supplement: 15
+Salary with an allowance: 138
+#############################################
+Full name: Alex
+Salary: 360
+Salary supplement: 20
+Salary with an allowance: 432
+#############################################
