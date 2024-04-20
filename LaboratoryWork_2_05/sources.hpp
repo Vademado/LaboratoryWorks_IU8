@@ -30,9 +30,9 @@ public:
 
     Employee& operator = (Employee&&) noexcept;
 
-    bool operator == (const Employee&) const; // для контейнеров set и map
+    bool operator == (const Employee&) const;
 
-    bool operator<(const Employee&) const; // для контейнеров set и map
+    bool operator<(const Employee&) const;
 
     bool operator()(const Employee&, const Employee&) const;
 

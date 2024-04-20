@@ -1,0 +1,9 @@
+E:/LaboratoryWorks_IU8/HomeWork_2_02/build-Clicker-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/Clicker.dir
+E:/LaboratoryWorks_IU8/HomeWork_2_02/build-Clicker-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+E:/LaboratoryWorks_IU8/HomeWork_2_02/build-Clicker-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+E:/LaboratoryWorks_IU8/HomeWork_2_02/build-Clicker-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
+E:/LaboratoryWorks_IU8/HomeWork_2_02/build-Clicker-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/install.dir
+E:/LaboratoryWorks_IU8/HomeWork_2_02/build-Clicker-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
+E:/LaboratoryWorks_IU8/HomeWork_2_02/build-Clicker-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
+E:/LaboratoryWorks_IU8/HomeWork_2_02/build-Clicker-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/Clicker_autogen_timestamp_deps.dir
+E:/LaboratoryWorks_IU8/HomeWork_2_02/build-Clicker-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/CMakeFiles/Clicker_autogen.dir
