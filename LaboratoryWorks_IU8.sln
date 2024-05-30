@@ -45,6 +45,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LaboratoryWork_2_08", "Labo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LaboratoryWork_2_07", "LaboratoryWork_2_07\LaboratoryWork_2_07.vcxproj", "{33EC8D05-E6CA-4FEC-A8D3-38DF7D99CD78}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dijkstras_algorithm", "Dijkstras_algorithm\Dijkstras_algorithm.vcxproj", "{138C923E-C11B-4C11-B741-DDEE66DCDFA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -221,6 +223,14 @@ Global
 		{33EC8D05-E6CA-4FEC-A8D3-38DF7D99CD78}.Release|x64.Build.0 = Release|x64
 		{33EC8D05-E6CA-4FEC-A8D3-38DF7D99CD78}.Release|x86.ActiveCfg = Release|Win32
 		{33EC8D05-E6CA-4FEC-A8D3-38DF7D99CD78}.Release|x86.Build.0 = Release|Win32
+		{138C923E-C11B-4C11-B741-DDEE66DCDFA3}.Debug|x64.ActiveCfg = Debug|x64
+		{138C923E-C11B-4C11-B741-DDEE66DCDFA3}.Debug|x64.Build.0 = Debug|x64
+		{138C923E-C11B-4C11-B741-DDEE66DCDFA3}.Debug|x86.ActiveCfg = Debug|Win32
+		{138C923E-C11B-4C11-B741-DDEE66DCDFA3}.Debug|x86.Build.0 = Debug|Win32
+		{138C923E-C11B-4C11-B741-DDEE66DCDFA3}.Release|x64.ActiveCfg = Release|x64
+		{138C923E-C11B-4C11-B741-DDEE66DCDFA3}.Release|x64.Build.0 = Release|x64
+		{138C923E-C11B-4C11-B741-DDEE66DCDFA3}.Release|x86.ActiveCfg = Release|Win32
+		{138C923E-C11B-4C11-B741-DDEE66DCDFA3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
