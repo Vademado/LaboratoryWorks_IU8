@@ -249,6 +249,3 @@ std::ostream& operator<<(std::ostream& output_stream, const MyPoint& point)
 {
 	return point.print(output_stream);
 }
-
-//template<typename T, typename ...Args>
-//MyUnique<T> Make_MyUnique(Args&&... args);

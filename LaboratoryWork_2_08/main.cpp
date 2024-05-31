@@ -3,7 +3,7 @@
 
 int main()
 {
-	/* {
+	{
 		int x, y, z;
 		std::cout << "Enter point_1 (x, y, x): ";
 		std::cin >> x >> y >> z;
@@ -32,13 +32,13 @@ int main()
 		MyUnique<MyPoint> unique_ptr3(std::move(unique_ptr1));
 		std::cout << "(unique_ptr1) address: " << unique_ptr1.get() << std::endl;
 		std::cout << "(unique_ptr3) address: " << unique_ptr3.get() << " value: " << *unique_ptr3 << std::endl;
-	}*/
+	}
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	{
 		int x, y, z;
-		/*
+		
 		std::cout << "Enter point_1 (x, y, x): ";
 		std::cin >> x >> y >> z;
 		MyPoint point_1(x, y, z);
@@ -67,7 +67,7 @@ int main()
 		std::cout << "(shared_ptr1) address: " << shared_ptr1.get() << std::endl;
 		std::cout << "(shared_ptr3) address: " << shared_ptr3.get() << " value: " << *shared_ptr3 << std::endl;
 
-		std::cout << "=============================================================" << std::endl;*/
+		std::cout << "=============================================================" << std::endl;
 
 		std::cout << "Enter point1 (x, y, x): ";
 		std::cin >> x >> y >> z;

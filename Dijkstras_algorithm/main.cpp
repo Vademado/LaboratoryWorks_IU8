@@ -7,7 +7,7 @@ int main() {
 	Graph graph;
 	try {
 		read_data(graph, file_name);
-		std::cout << graph.get_min_distance(0, 6) << std::endl;
+		std::cout << "Minimum distance: " << graph.get_min_distance(0, 7) << std::endl;
 	}
 	catch (const std::runtime_error& ex) {
 		std::cout << ex.what() << std::endl;
