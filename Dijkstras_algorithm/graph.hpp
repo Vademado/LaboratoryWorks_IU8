@@ -3,6 +3,7 @@
 #include <string>
 #include <algorithm>
 #include <fstream>
+#include <iostream>
 
 
 class Graph {
@@ -46,10 +47,13 @@ public:
 	friend std::istream& operator >> (std::istream&, Graph&);
 };
 
-
 std::vector<int> split(const std::string&);
+
 void read_data(Graph&, std::string);
+
 template <typename T>
 std::ostream& operator << (std::ostream&, const std::vector<T>);
+
 std::ostream& operator << (std::ostream&, const Graph&);
+
 std::istream& operator >> (std::istream&, Graph&);

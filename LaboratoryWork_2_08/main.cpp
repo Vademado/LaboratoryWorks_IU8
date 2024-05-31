@@ -82,7 +82,11 @@ int main()
 		std::cout << "Enter point2 (x, y, x): ";
 		std::cin >> x >> y >> z;
 		MyPoint point2(x, y, z);
+		std::cout << "test";
 		MyShared<MyPoint> shared_ptr3_point = Make_MyShared<MyPoint>(point2);
+		{
+			auto test = shared_ptr3_point;
+		}
 		std::cout << "(shared_ptr3_point) address: " << shared_ptr3_point.get() << " value: " << *shared_ptr3_point << std::endl;
 		shared_ptr2_point = shared_ptr3_point;
 		std::cout << "(shared_ptr2_point) address: " << shared_ptr2_point.get() << " value: " << *shared_ptr2_point << std::endl;
